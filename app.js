@@ -15,7 +15,13 @@ app.set("views","./src/views");
 app.set("view engine", "ejs");
 
 productRouter.route("/").get((req, res) =>{
-    res.send("Hello I 'm Products");
+    res.render("products",{
+        products:
+        {productTitle: 'น้ำยาล้างจาน', productDescription: 'น้ำยาล้างจานสูตร 1 ดีเลิศ', productPrice: 45},
+        {productTitle: 'น้ำยาล้างจาน', productDescription: 'น้ำยาล้างจานสูตร 2 ดีเลิศ', productPrice: 35},
+        {productTitle: 'น้ำยาล้างจาน', productDescription: 'น้ำยาล้างจานสูตร 3 ดีเลิศ', productPrice: 55},
+        {productTitle: 'น้ำยาล้างจาน', productDescription: 'น้ำยาล้างจานสูตร 4 ดีเลิศ', productPrice: 65},
+    });
 });
 
 productRouter.route("/1").get((req, res) =>{
